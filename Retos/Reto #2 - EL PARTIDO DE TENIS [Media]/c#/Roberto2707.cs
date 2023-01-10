@@ -7,8 +7,6 @@ public class Program
 	
 	public static void Main()
 	{
-		p1 = 0;
-		p2 = 0;
 		Random rand = new Random();
 		while (true)
 		{
@@ -34,14 +32,6 @@ public class Program
 		string resultado = "";
 		bool comparar = p1 > 3 || p2 > 3;
 		bool fin = false;
-		if(p1 <= 3)
-		{
-			resultado = datos[p1];
-		}
-		if(p2 <= 3)
-		{
-			resultado += " " + datos[p2];
-		}
 		if(comparar)
 		{
 			if(p1 == p2)
@@ -51,8 +41,12 @@ public class Program
 			else
 			{
 				fin = p1 - 1 > p2 || p2 - 1 > p1;
-				resultado = (fin ? "Ha ganado " : "Ventaja") + (p1 > p2 ? "P1" : "P2");
+				resultado = (fin ? "Ha ganado" : "Ventaja") + " " + (p1 > p2 ? "P1" : "P2");
 			}
+		}
+		else
+		{
+			resultado = datos[p1] + " " + datos[p2];
 		}
 		Console.WriteLine("P" + (i + 1).ToString() + "   " + resultado);
 		return !fin;
