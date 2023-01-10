@@ -29,16 +29,12 @@ public class Program
 			p2++;
 		}
 		string[] datos = new string[] {"Love", "15", "30", "40"};
-		string resultado = "";
+		string resultado = "Deuce";
 		bool comparar = p1 > 3 || p2 > 3;
 		bool fin = false;
 		if(comparar)
 		{
-			if(p1 == p2)
-			{
-				resultado = "Deuce";
-			}
-			else
+			if(p1 != p2)
 			{
 				fin = p1 - 1 > p2 || p2 - 1 > p1;
 				resultado = (fin ? "Ha ganado" : "Ventaja") + " " + (p1 > p2 ? "P1" : "P2");
